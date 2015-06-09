@@ -1,9 +1,10 @@
 package com.parksystem.model;
 
-public class Car extends Vehicle {
-	public Car() {
+public class Motorcycle extends Vehicle {
+
+	public Motorcycle() {
 		spotsNeeded = 1;
-		size = VehicleSize.Compact;
+		size = VehicleSize.Motorcycle;
 	}
 
 	public boolean canFitInSpot(ParkingSpot spot) {
@@ -11,6 +12,7 @@ public class Car extends Vehicle {
 	}
 
 	public void print() {
-		System.out.print("Car");
+		System.out.print("Motorcycle");
 	}
+
 }

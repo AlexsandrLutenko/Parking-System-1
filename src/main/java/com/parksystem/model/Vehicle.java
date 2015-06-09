@@ -15,9 +15,11 @@ public abstract class Vehicle {
 		return size;
 	}
 
-	public void parkInSpot(ParkingSpot spot) {}
+	public void parkInSpot(ParkingSpot spot) {
+	}
 
-	public void clearSpots() {}
+	public void clearSpots() {
+	}
 
 	public abstract boolean canFitInSpot(ParkingSpot spot);
 
