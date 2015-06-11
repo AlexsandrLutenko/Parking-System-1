@@ -10,10 +10,29 @@ public class Level {
 	private ParkingSpot[] spots;
 	private int availableSpots = 0; // number of free spots in on the level
 	private static final int SPOTS_PER_ROW = 10;
-
+	
 	public Level(int flr, int numberSpots) {
-
-		// TBD
+		this.floor = flr;
+		this.spots = new ParkingSpot[numberSpots];
+		int row = 1;
+		int tempSpotsInRow=0;
+		for (int i=0;i<spots.length;i++){
+			if(tempSpotsInRow==SPOTS_PER_ROW){
+				row++;
+				tempSpotsInRow=1;
+			}
+			else{
+				tempSpotsInRow++;
+			}
+			if(tempSpotsInRow<3){
+				spots[i] = new ParkingSpot(this, row, i+1, VehicleSize.Motorcycle);
+			}else if(tempSpotsInRow<6){
+				spots[i] = new ParkingSpot(this, row, i+1, VehicleSize.Compact);
+			}else{
+				spots[i] = new ParkingSpot(this, row, i+1, VehicleSize.Large);
+			}
+			
+		}
 	}
 
 	/**
@@ -60,7 +79,12 @@ public class Level {
 	}
 
 	public void print() {
-		// TBD
+		
+		System.out.println("Level number: " + this.floor);
+		for(int i=0;i<spots.length;i++){
+			spots[i].print();
+			
+		}
 	}
 
 	/**
